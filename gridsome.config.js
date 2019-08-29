@@ -6,5 +6,21 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: []
+  plugins: [
+    {
+      use: '@gridsome/source-contentful',
+      options: {
+        space: 'rzbd4sei21x6', // required
+        accessToken: '2reV4PxNqoNrUHj0vKRTe3aLhnirG6fqGSi1wfhu9Uc', // required
+        host: 'cdn.contentful.com',
+        environment: 'master',
+        typeName: 'Contentful',
+        options: {
+          routes: {
+            'GoodThing': '/goodthing/:slug',
+          }
+        }
+      }
+    }
+  ]
 }
