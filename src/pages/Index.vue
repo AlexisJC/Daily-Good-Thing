@@ -6,20 +6,20 @@
     
     <h1>Daily Good Thing</h1>
    
-    <p v-for="goodThing in $static.goodThings.edges" :key="goodThing.node.title">{{goodThing.node.title}}</p>
+    <p>{{dailyGoodThing.node.title}}</p>
 
-    <g-image :src="$static.goodThings.edges[0].node.media.file.url" class="media"/>
+    <g-image :src="dailyGoodThing.node.media.file.url" class="media"/>
 
   </Layout>
 </template>
 
 <static-query> 
 query goodThing {
-  goodThings: allContentfulGoodThing(filter: { publishDate: { dteq: "2019-08-31T00:00+02:00" }}) {
+  goodThings: allContentfulGoodThing {
 		edges {
       node {
         title,
-        media {file{url (width: 720, height: 200, quality: 90)}},
+        media {file{url}},
         publishDate
       }
     }
@@ -31,6 +31,21 @@ query goodThing {
 export default {
   metaInfo: {
     title: 'Hello, world!'
+  },
+  computed: {
+    dailyGoodThing () {
+      return this.$static.goodThings.edges.find(goodThing => this.isToday(goodThing.node.publishDate)) || this.$static.goodThings.edges[0]
+    }
+  },
+  methods: {
+    isToday (date) {
+      const formattedDate = new Date(date)
+      const today = new Date(Date.now())
+      const day = formattedDate.getDate() === today.getDate()
+      const month = formattedDate.getMonth() ===  today.getMonth()
+      const year = formattedDate.getYear() ===  today.getYear()
+      return day && month && year
+    }
   }
 }
 </script>
