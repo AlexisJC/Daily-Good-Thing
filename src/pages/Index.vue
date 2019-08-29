@@ -4,7 +4,7 @@
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <g-image alt="Example image" src="~/favicon.png" width="135" />
     
-    <h1>Daily Good Thing</h1>
+    <h1 class="title">Daily Good Thing</h1>
    
     <p>{{dailyGoodThing.node.title}}</p>
 
@@ -56,5 +56,8 @@ export default {
 }
 .media {
   width: 100%
+}
+.title {
+  color: #00a896
 }
 </style>
