@@ -17,9 +17,9 @@ module.exports = function (api) {
         edges {
           node {
             title,
-            slug,
             publishDate,
-            media {file{url}}
+            media {file{url}},
+            tags
           }
         }
       }
@@ -36,8 +36,7 @@ module.exports = function (api) {
         path: path,
         component: './src/templates/GoodThing.vue',
         context: {
-          title: goodThing.node.title,
-          media: goodThing.node.media.file.url
+          goodThing: goodThing.node
         }
       })
     })

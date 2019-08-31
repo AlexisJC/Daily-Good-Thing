@@ -1,14 +1,13 @@
 <template>
   <Layout>
+    <div class="my-10">
+      <h1 class="text-3xl md:text-5xl font-bold text-center my-5 text-gray-800">Daily Good Thing</h1>
+      <h2 class="text-xl font-light text-center my-5 text-gray-800">A little good thing. Everyday. For your mind.</h2>
+    </div>
     
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-    
-    <h1 class="title">Daily Good Thing</h1>
-   
-    <p>{{dailyGoodThing.node.title}}</p>
 
-    <g-image :src="dailyGoodThing.node.media.file.url" class="media"/>
+
+    <GoodThing :goodThing="dailyGoodThing.node"/>
 
   </Layout>
 </template>
@@ -19,8 +18,9 @@ query goodThing {
 		edges {
       node {
         title,
-        media {file{url}},
-        publishDate
+        media {file{url}, title},
+        publishDate,
+        tags
       }
     }
   }
@@ -28,7 +28,9 @@ query goodThing {
 </static-query>
 
 <script>
+import GoodThing from '@/components/GoodThing'
 export default {
+  components: { GoodThing },
   metaInfo: {
     title: 'Hello, world!'
   },

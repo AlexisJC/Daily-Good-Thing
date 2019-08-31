@@ -5,11 +5,15 @@
         <g-link to="/">{{ $static.metaData.siteName }}</g-link>
       </strong>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about">About</g-link>
+        <g-link class="nav__link text-yellow-700" to="/collection">Collection</g-link>
+        <span class="nav__link text-yellow-700 opacity-50 cursor-not-allowed" to="/submit">Submit</span>
       </nav>
     </header>
-    <slot/>
+    <transition name="fade" appear>
+      <main> <!-- a wrapper for slot is needed -->
+        <slot /> <!-- the content -->
+      </main>
+    </transition>
   </div>
 </template>
 
@@ -27,7 +31,6 @@ body {
   margin:0;
   padding:0;
   line-height: 1.5;
-  background-color:#f0f3bd;
 }
 
 .layout {
@@ -48,4 +51,14 @@ body {
 .nav__link {
   margin-left: 20px;
 }
+
+
+.fade-enter-active {
+  transition: opacity .5s;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
 </style>

@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Daily Good Thing',
   plugins: [
     {
       use: '@gridsome/source-contentful',
@@ -20,6 +20,17 @@ module.exports = {
             'GoodThing': '/goodthing/:slug',
           }
         }
+      }
+    },
+    {
+      use: 'gridsome-plugin-tailwindcss',
+      options: {
+        tailwindConfig: './tailwind.config.js',
+        purgeConfig: {},
+        presetEnvConfig: {},
+        shouldPurge: true,
+        shouldImport: true,
+        shouldTimeTravel: true,
       }
     }
   ]

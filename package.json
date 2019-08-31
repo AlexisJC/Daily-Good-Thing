@@ -9,5 +9,8 @@
   "dependencies": {
     "@gridsome/source-contentful": "^0.4.0",
     "gridsome": "^0.6.0"
+  },
+  "devDependencies": {
+    "gridsome-plugin-tailwindcss": "^2.2.22"
   }
 }
