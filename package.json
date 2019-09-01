@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "@gridsome/source-contentful": "^0.4.0",
-    "gridsome": "^0.6.0"
+    "gridsome": "^0.6.0",
+    "gridsome-plugin-pwa": "0.0.7"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^2.2.22"
