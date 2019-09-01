@@ -16,7 +16,7 @@ module.exports = function (api) {
   api.createPages(async ({ createPage, graphql  }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api
     const { data } = await graphql(`query goodThing {
-      goodThings: allContentfulGoodThing(filter: { publishDate: {lte: "2019-09-01T00:00+02:00"}}) {
+      goodThings: allContentfulGoodThing {
         edges {
           node {
             title,
