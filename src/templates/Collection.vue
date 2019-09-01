@@ -12,8 +12,9 @@
 
 <script>
 import GoodThing from '@/components/GoodThing'
+import { Pager } from 'gridsome'
 export default {
-  components: { GoodThing }
+  components: { GoodThing, Pager }
 }
 </script>
 
