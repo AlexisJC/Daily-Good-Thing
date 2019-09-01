@@ -5,8 +5,8 @@
         <g-link to="/">{{ $static.metaData.siteName }}</g-link>
       </strong>
       <nav class="nav">
-        <g-link class="nav__link text-yellow-700" to="/collection">Collection</g-link>
-        <span class="nav__link text-yellow-700 opacity-50 cursor-not-allowed" to="/submit">Submit</span>
+        <g-link class="nav__link text-yellow-800" to="/collection">Collection</g-link>
+        <span class="nav__link text-yellow-800 opacity-50 cursor-not-allowed" to="/submit">Submit</span>
       </nav>
     </header>
     <transition name="fade" appear>
