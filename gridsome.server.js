@@ -10,10 +10,13 @@ module.exports = function (api) {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api
   })
 
+  /**
+   * /goodthing/:date
+   */
   api.createPages(async ({ createPage, graphql  }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api
     const { data } = await graphql(`query goodThing {
-      goodThings: allContentfulGoodThing {
+      goodThings: allContentfulGoodThing(filter: { publishDate: {lte: "2019-09-01T00:00+02:00"}}) {
         edges {
           node {
             title,
@@ -39,6 +42,39 @@ module.exports = function (api) {
           goodThing: goodThing.node
         }
       })
+    })
+  })
+
+  /**
+   * /collection
+   */
+  api.createPages(async ({ createPage, graphql  }) => {
+    const today = new Date().toISOString()
+    const { data } = await graphql(`query GoodThing($page: Int) {
+      goodThings: allContentfulGoodThing(perPage: 10, page: $page, filter: { publishDate: {lte: "${today}"}}) @paginate {
+        pageInfo {
+          totalPages
+          currentPage
+        }
+        edges {
+          node {
+            title,
+            media {file{url}, title},
+            publishDate,
+            tags
+          }
+        }
+      }
+    }
+    `)
+
+    createPage({
+      path: '/collection',
+      component: './src/templates/Collection.vue',
+      context: {
+        goodThings: data.goodThings.edges,
+        pageInfo: data.goodThings.pageInfo
+      }
     })
   })
 }
