@@ -13,7 +13,7 @@
     </div>
     <div class="px-6 py-4">
       <span 
-        v-for="tag in goodThing.tags" :key="tag" 
+        v-for="(tag, index) in goodThing.tags" :key="tag" 
         class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2" 
         :class="{'mr-2': index + 1 === goodThing.tags.length}"
       >
