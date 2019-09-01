@@ -7,6 +7,13 @@
 <script>
 import GoodThing from '@/components/GoodThing'
 export default {
-  components: { GoodThing }
+  components: { GoodThing },
+  metaInfo: {
+    title: 'GoodThing',
+    meta: [
+      { name: 'author', content: 'alexisjc' },
+      { name: 'description', content: 'A good thing page' },
+    ]
+  }
 }
 </script>

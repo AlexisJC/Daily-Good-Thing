@@ -32,7 +32,11 @@ import GoodThing from '@/components/GoodThing'
 export default {
   components: { GoodThing },
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Home Page',
+    meta: [
+      { name: 'author', content: 'alexisjc' },
+      { name: 'description', content: 'A good thing everyday !' }
+    ]
   },
   computed: {
     dailyGoodThing () {

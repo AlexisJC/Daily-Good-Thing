@@ -14,7 +14,14 @@
 import GoodThing from '@/components/GoodThing'
 import { Pager } from 'gridsome'
 export default {
-  components: { GoodThing, Pager }
+  components: { GoodThing, Pager },
+  metaInfo: {
+    title: 'Collection',
+    meta: [
+      { name: 'author', content: 'alexisjc' },
+      { name: 'description', content: 'A collection of good things' },
+    ]
+  }
 }
 </script>
 
