@@ -5,7 +5,7 @@
     </div>
     
     <div class="px-6 py-4">
-      <div>{{publishDate}}</div>
+      <div class="font-light">{{publishDate}}</div>
       <div class="font-bold text-xl mb-2 text-gray-700">{{ goodThing.title }}</div>
       <!-- <p class="text-gray-700 text-base">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
