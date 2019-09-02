@@ -1,7 +1,8 @@
 <template>
   <div class="rounded overflow-hidden shadow-lg my-10">
     <div class="bg-gray-200">
-      <g-image :src="goodThing.media.file.url" :alt="goodThing.media.title" class="mx-auto"/>
+      <g-image v-if="isImage(goodThing.media.file)" :src="goodThing.media.file.url" :alt="goodThing.media.title" class="mx-auto"/>
+      <video v-else-if="isVideo(goodThing.media.file)" :src="goodThing.media.file.url" controls class="mx-auto">{{goodThing.media.title}}</video>
     </div>
     
     <div class="px-6 py-4">
@@ -35,6 +36,14 @@ export default {
       const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
       return this.daily ? new Date().toLocaleDateString('en-EN', options) : new Date(this.goodThing.publishDate).toLocaleDateString('en-EN', options)
     },
+  },
+  methods: {
+    isImage(file) {
+      return file.contentType.startsWith('image')
+    },
+    isVideo(file) {
+      return file.contentType.startsWith('video')
+    }
   }
 }
 </script>

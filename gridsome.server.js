@@ -21,7 +21,7 @@ module.exports = function (api) {
           node {
             title,
             publishDate,
-            media {file{url}},
+            media {file{url, contentType}},
             tags
           }
         }
@@ -59,7 +59,7 @@ module.exports = function (api) {
         edges {
           node {
             title,
-            media {file{url}, title},
+            media {file{url, contentType}, title},
             publishDate,
             tags
           }
