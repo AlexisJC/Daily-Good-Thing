@@ -18,7 +18,7 @@
         class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2" 
         :class="{'mr-2': index + 1 === goodThing.tags.length}"
       >
-        {{tag}}
+        #{{tag}}
       </span>
     </div>
   </div>
