@@ -17,6 +17,17 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    const ackeeTracker = require('ackee-tracker')
+    ackeeTracker.create({
+      server: 'https://ajc-analytics.herokuapp.com',
+      domainId: '072bf4db-ffaf-4877-99f8-c88aba3ea8f4'
+    }).record()
+  }
+}
+</script>
 <static-query>
 query {
   metaData {
