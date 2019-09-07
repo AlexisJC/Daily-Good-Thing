@@ -3,6 +3,12 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 
+import * as ackeeTracker from 'ackee-tracker'
+ackeeTracker.create({
+	server: 'http://localhost:3000',
+	domainId: '072bf4db-ffaf-4877-99f8-c88aba3ea8f4'
+}).record()
+
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
