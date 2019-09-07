@@ -51,7 +51,7 @@ module.exports = function (api) {
   api.createPages(async ({ createPage, graphql  }) => {
     const today = new Date().toISOString()
     const { data } = await graphql(`query GoodThing($page: Int) {
-      goodThings: allContentfulGoodThing(perPage: 10, page: $page, filter: { publishDate: {lte: "${today}"}}) @paginate {
+      goodThings: allContentfulGoodThing(perPage: 30, page: $page, filter: { publishDate: {lte: "${today}"}}, sortBy: "publishDate") @paginate {
         pageInfo {
           totalPages
           currentPage
