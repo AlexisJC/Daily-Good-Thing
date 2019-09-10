@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Daily Good Thing',
+  siteUrl: 'https://www.dailygoodthing.com',
   plugins: [
     {
       use: '@gridsome/source-contentful',
