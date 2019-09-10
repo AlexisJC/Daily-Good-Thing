@@ -9,11 +9,10 @@ import GoodThing from '@/components/GoodThing'
 export default {
   components: { GoodThing },
   metaInfo: {
-    title: $context.GoodThing.title,
+    title: 'Good Thing',
     meta: [
       { name: 'author', content: 'alexisjc' },
-      { name: 'description', content: 'A good thing page' },
-      { name: 'tags', content: $context.GoodThing.tags.join() }
+      { name: 'description', content: 'A good thing page' }
     ]
   }
 }
