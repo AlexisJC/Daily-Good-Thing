@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <GoodThing :goodThing="$context.goodThing" daily/>
+    <GoodThing :goodThing="$context.goodThing"/>
   </Layout>
 </template>
 
@@ -13,6 +13,7 @@ export default {
     meta: [
       { name: 'author', content: 'alexisjc' },
       { name: 'description', content: 'A good thing page' },
+
     ]
   }
 }

@@ -7,7 +7,7 @@
     
 
 
-    <GoodThing :goodThing="dailyGoodThing.node"/>
+    <GoodThing :goodThing="dailyGoodThing.node" daily/>
 
   </Layout>
 </template>
