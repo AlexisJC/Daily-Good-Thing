@@ -20,6 +20,7 @@ module.exports = function (api) {
         edges {
           node {
             title,
+            slug,
             publishDate,
             media {file{url, contentType}},
             tags
@@ -33,8 +34,7 @@ module.exports = function (api) {
       const day = publishDate.getDate()
       const month = publishDate.getMonth() + 1
       const year = publishDate.getFullYear()
-      const path = `/${year}/${month}/${day}`
-      console.log(path)
+      const path = `/${year}/${month}/${day}/${goodThing.node.slug}`
       createPage({
         path: path,
         component: './src/templates/GoodThing.vue',
@@ -59,6 +59,7 @@ module.exports = function (api) {
         edges {
           node {
             title,
+            slug,
             media {file{url, contentType}, title},
             publishDate,
             tags

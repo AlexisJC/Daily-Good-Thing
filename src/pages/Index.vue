@@ -16,6 +16,7 @@ query goodThing {
 		edges {
       node {
         title,
+        slug,
         media {file{url, contentType}, title},
         publishDate,
         tags
