@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <GoodThing :goodThing="$context.goodThing" daily/>
+    <GoodThing :goodThing="$context.goodThing"/>
   </Layout>
 </template>
 
@@ -9,10 +9,10 @@ import GoodThing from '@/components/GoodThing'
 export default {
   components: { GoodThing },
   metaInfo: {
-    title: 'GoodThing',
+    title: 'Good Thing',
     meta: [
       { name: 'author', content: 'alexisjc' },
-      { name: 'description', content: 'A good thing page' },
+      { name: 'description', content: 'A good thing page' }
     ]
   }
 }

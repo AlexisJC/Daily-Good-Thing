@@ -6,6 +6,7 @@
     </div>
     
     <div class="px-6 py-4">
+      <ShareBtn class="float-right" :goodThing="goodThing"/>
       <div class="font-light">{{publishDate}}</div>
       <div class="font-bold text-xl mb-2 text-gray-700">{{ goodThing.title }}</div>
       <!-- <p class="text-gray-700 text-base">
@@ -25,8 +26,10 @@
 </template>
 
 <script>
+import ShareBtn from '@/components/ShareBtn'
 export default {
   name: 'GoodThing',
+  components: { ShareBtn },
   props: {
     goodThing: {type: Object, required: true},
     daily: {type: Boolean, required: false}
@@ -36,6 +39,9 @@ export default {
       const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
       return this.daily ? new Date().toLocaleDateString('en-EN', options) : new Date(this.goodThing.publishDate).toLocaleDateString('en-EN', options)
     },
+    canShare () {
+      window.share
+    }
   },
   methods: {
     isImage(file) {

@@ -4,10 +4,8 @@
       <h1 class="text-3xl md:text-5xl font-bold text-center my-5 text-gray-800">Daily Good Thing</h1>
       <h2 class="text-xl font-light text-center my-5 text-gray-800">A little good thing. Everyday. For your mind.</h2>
     </div>
-    
 
-
-    <GoodThing :goodThing="dailyGoodThing.node"/>
+    <GoodThing :goodThing="dailyGoodThing.node" daily/>
 
   </Layout>
 </template>
@@ -18,6 +16,7 @@ query goodThing {
 		edges {
       node {
         title,
+        slug,
         media {file{url, contentType}, title},
         publishDate,
         tags
@@ -32,10 +31,11 @@ import GoodThing from '@/components/GoodThing'
 export default {
   components: { GoodThing },
   metaInfo: {
-    title: 'Home Page',
+    title: 'What today ?',
     meta: [
       { name: 'author', content: 'alexisjc' },
-      { name: 'description', content: 'A good thing everyday !' }
+      { name: 'description', content: 'A good thing everyday !' },
+      { name: 'why', content: 'Because your mind needs it.'}
     ]
   },
   computed: {

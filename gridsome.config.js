@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Daily Good Thing',
+  siteUrl: 'https://www.dailygoodthing.com',
   plugins: [
     {
       use: '@gridsome/source-contentful',
@@ -47,6 +48,17 @@ module.exports = {
           backgroundColor: '#ffffff',
           icon: './static/icon.png' // must be supplied!
       }
-  }
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        config: {
+          '/collection': {
+            changefreq: 'daily',
+            priority: 0.9
+          }
+        }
+      }
+    }
   ]
 }
