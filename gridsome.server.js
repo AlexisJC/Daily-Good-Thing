@@ -44,38 +44,4 @@ module.exports = function (api) {
       })
     })
   })
-
-  /**
-   * /collection
-   */
-  api.createPages(async ({ createPage, graphql  }) => {
-    const today = new Date().toISOString()
-    const { data } = await graphql(`query GoodThing($page: Int) {
-      goodThings: allContentfulGoodThing(perPage: 30, page: $page, filter: { publishDate: {lte: "${today}"}}, sortBy: "publishDate") @paginate {
-        pageInfo {
-          totalPages
-          currentPage
-        }
-        edges {
-          node {
-            title,
-            slug,
-            media {file{url, contentType}, title},
-            publishDate,
-            tags
-          }
-        }
-      }
-    }
-    `)
-
-    createPage({
-      path: '/collection',
-      component: './src/templates/Collection.vue',
-      context: {
-        goodThings: data.goodThings.edges,
-        pageInfo: data.goodThings.pageInfo
-      }
-    })
-  })
 }
