@@ -11,7 +11,6 @@
     "@gridsome/source-contentful": "^0.5.2",
     "ackee-tracker": "^3.2.3",
     "gridsome": "^0.7.14",
-    "gridsome-plugin-pwa": "0.0.17",
     "vue-clipboard2": "^0.3.1"
   },
   "devDependencies": {
