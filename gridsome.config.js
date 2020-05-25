@@ -12,7 +12,7 @@ module.exports = {
       use: '@gridsome/source-contentful',
       options: {
         space: 'rzbd4sei21x6', // required
-        accessToken: '2reV4PxNqoNrUHj0vKRTe3aLhnirG6fqGSi1wfhu9Uc', // required
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN, // required
         host: 'cdn.contentful.com',
         environment: 'master',
         typeName: 'Contentful',
@@ -24,30 +24,7 @@ module.exports = {
       }
     },
     {
-      use: 'gridsome-plugin-tailwindcss',
-      options: {
-        tailwindConfig: './tailwind.config.js',
-        purgeConfig: {},
-        presetEnvConfig: {},
-        shouldPurge: true,
-        shouldImport: true,
-        shouldTimeTravel: true,
-      }
-    },
-    {
-      use: 'gridsome-plugin-pwa',
-      options: {
-          title: 'Gridsome',
-          startUrl: '/',
-          display: 'standalone',
-          statusBarStyle: 'default',
-          manifestPath: 'manifest.json',
-          serviceWorkerPath: 'service-worker.js',
-          shortName: 'Gridsome',
-          themeColor: '#666600',
-          backgroundColor: '#ffffff',
-          icon: './static/icon.png' // must be supplied!
-      }
+      use: 'gridsome-plugin-tailwindcss'
     },
     {
       use: '@gridsome/plugin-sitemap',
