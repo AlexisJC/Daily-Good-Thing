@@ -1,14 +1,22 @@
-# Default starter for Gridsome
+# Daily Good Thing
 
-This is the project you get when you run `gridsome create new-project`.
+This is a very simple website displaying a good thing (image or video) every day.  
+It's a side project to learn more about the JAMstack concept. I'm used it to play with some modern stuff 🎮.
 
-### 1. Install Gridsome CLI tool if you don't have
+| Tool        | Description           |
+| ----------- | --------------------- |  
+| Gridsome    | Static Site Generator |
+| Tailwindcss | Design System         |
+| Contentful  | Headless CMS          |
 
-`npm install --global @gridsome/cli`
+### Installation
 
-### 2. Create a Gridsome project
+`npm install`
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+### Compile and start a development server
+
+`npm run develop`
+
+### Build
+
+`npm run build`
