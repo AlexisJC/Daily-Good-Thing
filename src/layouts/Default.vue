@@ -6,7 +6,7 @@
       </strong>
       <nav class="nav">
         <g-link class="nav__link text-yellow-800" to="/collection">Collection</g-link>
-        <span class="nav__link text-yellow-800 opacity-50 cursor-not-allowed" to="/submit">Submit</span>
+        <g-link class="nav__link text-yellow-800" to="/submit">Submit</g-link>
       </nav>
     </header>
     <transition name="fade" appear>
